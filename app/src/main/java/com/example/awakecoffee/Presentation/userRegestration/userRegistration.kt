@@ -6,11 +6,13 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
@@ -57,9 +59,16 @@ fun UserRegistration() {
                 fontSize = 34.sp,
                 fontWeight = FontWeight.Bold,
                 color = colorResource(id = R.color.dark_coffee),
-                modifier = Modifier.padding(top = 200.dp)
+                modifier = Modifier.padding(top = 240.dp)
             )
-            Spacer(modifier = Modifier.size(60.dp))
+            HorizontalDivider(
+                modifier = Modifier.fillMaxWidth(.5f)
+                    .padding(top = 10.dp),
+                thickness = 1.dp,
+                color = colorResource(id = R.color.dark_coffee),
+
+            )
+            Spacer(modifier = Modifier.size(20.dp))
             OutlinedTextField(
                 value = email,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
