@@ -28,7 +28,7 @@ fun Splashscreen(){
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(colorResource(id = R.color.light_coffee)),
+            .background(colorResource(id = R.color.white)),
         contentAlignment = Alignment.Center
     ) {
         Icon(

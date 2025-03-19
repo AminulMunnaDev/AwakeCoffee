@@ -1,9 +1,13 @@
 package com.example.awakecoffee.Presentation.WelcomeScreen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -27,63 +31,98 @@ import com.example.awakecoffee.R
 @Composable
 @Preview(showSystemUi = true)
 fun WelcomeScreen() {
-
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxSize().
-        padding(10.dp)
-
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(colorResource(id = R.color.white)),
+        contentAlignment = Alignment.Center
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.coffee_beans),
-            contentDescription = "Whatsapp Sticker",
-            modifier = Modifier.size(200.dp)
-        )
-        Text(
-            text = "Welcome to Awake Coffee",
-            fontSize = 30.sp,
-            fontWeight = FontWeight.Bold,
-        )
-        Spacer(modifier = Modifier.size(10.dp))
-        Row {
-            Text(
-                text = "Read our",
-                color = Color.Gray
-            )
-            Spacer(modifier = Modifier.size(5.dp))
 
-            Text(
-                text = "Privacy Policy.",
-                color = colorResource(id = R.color.light_coffee)
-            )
-            Text(
-                text = "'Tap to Agree and Continue'",
-                color = Color.Gray
-            )
-        }
-        Row {
-            Text(
-                text = "Accept the",
-                color = Color.Gray
-            )
-            Spacer(modifier = Modifier.size(5.dp))
 
-            Text(
-                text = "Terms of Service.",
-                color = colorResource(id = R.color.light_coffee)
-            )
-        }
-        Spacer(modifier = Modifier.size(25.dp))
-        Button(
-            onClick = {},
-            shape = RoundedCornerShape(8.dp),
-            modifier = Modifier.size(280.dp,43.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = colorResource(id = R.color.dark_coffee)
-            )
+        Column(
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(10.dp)
+
         ) {
-            Text(text =  "Agree and Continue", fontSize = 16.sp)
+            Image(
+                painter = painterResource(id = R.drawable.coffee_beans),
+                contentDescription = "Whatsapp Sticker",
+                modifier = Modifier.size(200.dp)
+            )
+            Text(
+                text = "Welcome to Awake Coffee",
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+            )
+            Spacer(modifier = Modifier.size(10.dp))
+            Row {
+                Text(
+                    text = "Read our",
+                    color = Color.Gray
+                )
+                Spacer(modifier = Modifier.size(5.dp))
+
+                Text(
+                    text = "Privacy Policy.",
+                    color = colorResource(id = R.color.light_coffee)
+                )
+                Text(
+                    text = "'Tap to Agree and Continue'",
+                    color = Color.Gray
+                )
+            }
+            Row {
+                Text(
+                    text = "Accept the",
+                    color = Color.Gray
+                )
+                Spacer(modifier = Modifier.size(5.dp))
+
+                Text(
+                    text = "Terms of Service.",
+                    color = colorResource(id = R.color.light_coffee)
+                )
+            }
+            Spacer(modifier = Modifier.size(25.dp))
+            Button(
+                onClick = {},
+                shape = RoundedCornerShape(8.dp),
+                modifier = Modifier.size(280.dp, 43.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(id = R.color.dark_coffee)
+                )
+            ) {
+                Text(text = "Agree and Continue", fontSize = 16.sp)
+            }
+
         }
+        Column(
+            modifier = Modifier.align(Alignment.BottomCenter),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+
+            Text(
+                text = "From",
+                fontWeight = FontWeight.Bold,
+                fontSize = 18.sp
+            )
+            Row(
+                modifier = Modifier.align(Alignment.CenterHorizontally)
+            ) {
+                Spacer(modifier = Modifier.padding(horizontal = 1.dp))
+                Text(
+                    text = "Awake Coffee",
+                    fontWeight = FontWeight.Bold,
+                    color = colorResource(id = R.color.dark_coffee),
+                    fontSize = 23.sp
+                )
+
+
+            }
+        }
+
     }
 }
